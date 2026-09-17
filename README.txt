@@ -1,10 +1,26 @@
-STIFF — V7 + V9 MIX
+STIFF — PRIVATE COURSE WEB APP — V10
 
-This build intentionally combines:
-- V7 Light visual design, cream background, charcoal text and mint/teal accent.
-- V7 top navigation and circular Phase 1–9 content bar.
-- V7 Resources/Admin structure and original mapped course data.
-- V9 behaviour that separates Learning and Exercises into tabs inside every phase.
-- A single Phase heading inside each phase (no duplicated small Phase label).
+V10 interface:
+- Warm off-white / cream main interface.
+- Charcoal typography with mint/teal accent.
+- Nine-phase circular phase navigation bar.
+- Learning and Exercises are separated within every phase.
+- Duplicate phase labelling has been removed.
+- Existing mapped Google Drive course media remains connected.
+- Progress is stored locally in the browser.
+- Designed for GitHub Pages and Add to Home Screen.
 
-Upload index.html, course-data.json and README.txt to the ROOT of the STIFF GitHub repository.
+GitHub Pages:
+Upload every file in this folder to the ROOT of the STIFF repository.
+Settings > Pages should deploy from main / (root).
+
+Files required:
+- index.html
+- course-data.json
+- manifest.webmanifest
+- icon.svg
+- sw.js
+- README.txt
+
+This package identifies itself consistently as V10.
+The original Google Drive source files are not modified.

@@ -20,7 +20,7 @@
 .homeHero{padding:45px 0 26px}.homeHero h1{font-size:38px}.intro{color:#4e5a55;line-height:1.65;max-width:760px;font-size:16px}.intro strong{color:#25302c}.encourage{margin-top:13px;color:var(--mint);font-weight:800}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.phaseCard{background:#ffffff;border:1px solid #dfe5df;border-radius:15px;padding:18px}.phaseCard h3{margin:8px 0}.progress{height:3px;background:#d7ded9}.progress>div{height:100%;background:var(--mint)}
 .resourceHero{padding:34px 0 8px}.resourceHero h1{font-size:32px;margin:7px 0 8px}.resourceHero p{color:#d4d4cf;line-height:1.55;max-width:760px}
-.resourceSection{margin-top:28px}.resourceSection h2{font-size:17px;margin-bottom:12px}.resourceStrip{display:flex;gap:10px;overflow-x:auto;padding:2px 0 7px;scrollbar-width:thin}.resourceCard{min-width:150px;width:150px;min-height:138px;border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;border:0;text-align:left;font-weight:900;line-height:1.14}.resourceCard.exercise{background:#ccefe3;color:#24463d}.resourceCard.audio{background:#dfeef9;color:#274052}.resourceCard.podcast{background:#e9e1f6;color:#3d3151}.resourceCard.course{background:#f9dfcf;color:#563a2d;border:1px solid #efd0bd;min-height:156px}.resourcePhase{font-size:10px;opacity:.68;margin-bottom:8px;font-weight:750}.resourceNote{font-size:11px;line-height:1.35;font-weight:600;opacity:.78;margin-top:7px}
+.contentTabs{display:flex;gap:6px;background:#e9eeea;border:1px solid #d7dfda;border-radius:14px;padding:5px;margin:4px 0 18px;max-width:460px}.contentTab{flex:1;border:0;border-radius:10px;padding:11px 14px;background:transparent;color:#5d6762;font-weight:900;cursor:pointer}.contentTab.active{background:var(--mint);color:#18332b;box-shadow:0 1px 4px rgba(0,0,0,.08)}.resourceSection{margin-top:28px}.resourceSection h2{font-size:17px;margin-bottom:12px}.resourceStrip{display:flex;gap:10px;overflow-x:auto;padding:2px 0 7px;scrollbar-width:thin}.resourceCard{min-width:150px;width:150px;min-height:138px;border-radius:12px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;border:0;text-align:left;font-weight:900;line-height:1.14}.resourceCard.exercise{background:#ccefe3;color:#24463d}.resourceCard.audio{background:#dfeef9;color:#274052}.resourceCard.podcast{background:#e9e1f6;color:#3d3151}.resourceCard.course{background:#f9dfcf;color:#563a2d;border:1px solid #efd0bd;min-height:156px}.resourcePhase{font-size:10px;opacity:.68;margin-bottom:8px;font-weight:750}.resourceNote{font-size:11px;line-height:1.35;font-weight:600;opacity:.78;margin-top:7px}
 .viewerTop{position:sticky;top:0;z-index:50;background:#050505;padding:13px 16px 0}.viewerRow{max-width:840px;margin:auto;display:flex;align-items:center;gap:11px;height:42px}.close{font-size:28px;border:0;background:none;color:#fff;cursor:pointer}.viewerName{flex:1;font-size:14px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.viewerBar{max-width:840px;margin:auto;height:2px;background:#555}.viewerBar div{height:100%;background:var(--mint)}
 .viewerBody{max-width:840px;margin:auto;padding:25px 12px 100px;min-height:75vh;display:flex;flex-direction:column;align-items:center}.screen{max-width:100%;max-height:72vh;object-fit:contain;display:block;background:#000}.media{width:min(100%,760px);height:64vh;border:0;border-radius:9px;background:#000}.counter{color:#73736f;font-size:12px;margin-top:10px}
 .viewerNav{position:fixed;z-index:60;left:0;right:0;bottom:0;background:linear-gradient(transparent,#050505 24%,#050505);padding:22px 18px calc(14px + env(safe-area-inset-bottom))}.viewerNavIn{max-width:840px;margin:auto;display:flex;justify-content:space-between}.back{background:transparent;color:#fff}
@@ -50,15 +50,6 @@
 .viewerNav{background:linear-gradient(transparent,#050505 24%,#050505)!important}
 .viewerNav .back{color:#fff!important;background:transparent!important;border-color:#555!important}
 .viewerNav .btn:not(.back){background:#fff!important;color:#111!important;border-color:#fff!important}
-
-
-.courseSectionTabs{display:flex;gap:8px;margin:4px 0 22px;padding:5px;background:#e9eee9;border:1px solid #d9e1dc;border-radius:14px;max-width:520px}
-.courseSectionTab{flex:1;border:0;border-radius:10px;padding:12px 16px;background:transparent;color:#66706c;font:inherit;font-weight:850;cursor:pointer}
-.courseSectionTab.active{background:#fff;color:var(--text);box-shadow:0 1px 5px rgba(31,45,39,.10)}
-.courseSectionTab.active.learnTab{box-shadow:inset 0 -3px 0 var(--mint),0 1px 5px rgba(31,45,39,.10)}
-.courseSectionTab.active.exerciseTab{background:#dff8ee;box-shadow:inset 0 -3px 0 var(--mint),0 1px 5px rgba(31,45,39,.08)}
-.courseSectionCount{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;margin-left:5px;border-radius:999px;background:#eef2ef;font-size:11px}
-.courseSectionTab.active .courseSectionCount{background:#e2f7ef}
 
 </style></head>
 <body><div id="root"></div>
@@ -110,16 +101,17 @@ function home(){
  const cards=DATA.phases.map(p=>{let d=p.items.filter(i=>completed[i.folder]).length; const desc=SETTINGS.phaseDescriptions[String(p.phase)]??p.description; return `<div class="phaseCard"><div class="eyebrow">Phase ${p.phase}</div><h3>Phase ${p.phase}</h3><div class="meta">${esc(desc)}</div><div class="progress" style="margin:14px 0"><div style="width:${Math.round(d/p.items.length*100)}%"></div></div><button class="btn" onclick="showPhase(${p.phase})">Open phase</button></div>`}).join('');
  root.innerHTML=`${nav('home')}<main class="main"><div class="homeHero"><div class="eyebrow">${esc(SETTINGS.homeEyebrow)}</div><h1>${esc(SETTINGS.homeTitle)}</h1><div class="intro">${esc(SETTINGS.homeIntro)}<div class="encourage">${esc(SETTINGS.homeEncouragement)}</div></div></div><div class="grid">${cards}</div></main>`;
 }
-function showPhase(n,section='learn'){
- currentPage='phases'; phase=n; lesson=null;
- const p=DATA.phases.find(x=>x.phase===n);
- const learns=p.items.filter(i=>i.type==='learn').sort((a,b)=>a.n-b.n);
- const ex=p.items.filter(i=>i.type==='exercise').sort((a,b)=>a.n-b.n);
- const active=section==='exercise'?'exercise':'learn';
- const list=active==='learn'?learns:ex;
- const render=i=>`<div class="lessonRow"><button class="lessonMain" onclick="openLesson('${i.folder}',${n})"><div class="lessonIcon">${i.type==='learn'?'▶':'✓'}</div><div><div class="lessonTitle">${esc(i.title)}</div>${i.meta?`<div class="meta">${esc(i.meta)}</div>`:''}</div><div class="chev">›</div></button><button class="check ${completed[i.folder]?'done':''}" onclick="event.stopPropagation();toggle('${i.folder}')">${completed[i.folder]?'✓':'○'}</button></div>`;
- root.innerHTML=`${nav('phases',true)}<main class="main"><div class="phaseHead"><h1>Phase ${n}</h1><div class="phaseDesc">${esc(SETTINGS.phaseDescriptions[String(n)]??p.description)}</div></div><div class="courseSectionTabs"><button class="courseSectionTab learnTab ${active==='learn'?'active':''}" onclick="showPhase(${n},'learn')">Learning <span class="courseSectionCount">${learns.length}</span></button><button class="courseSectionTab exerciseTab ${active==='exercise'?'active':''}" onclick="showPhase(${n},'exercise')">Exercises <span class="courseSectionCount">${ex.length}</span></button></div><div class="lessonList">${list.map(render).join('')||'<div class="meta">No items in this section.</div>'}</div></main>`;
+let phaseSection='learn';
+function showPhase(n,section){
+ currentPage='phases'; lesson=null;
+ if(n!==phase) phaseSection='learn';
+ phase=n; if(section) phaseSection=section;
+ const p=DATA.phases.find(x=>x.phase===n), learns=p.items.filter(i=>i.type==='learn').sort((a,b)=>a.n-b.n), ex=p.items.filter(i=>i.type==='exercise').sort((a,b)=>a.n-b.n);
+ const items=phaseSection==='exercise'?ex:learns;
+ const render=i=>`<div class="lessonCard"><div><div class="type">${i.type==='learn'?'Learning':'Exercise'} ${i.n}</div><h3>${esc(i.title)}</h3>${i.meta?`<div class="meta">${esc(i.meta)}</div>`:''}</div><div class="lessonActions"><button class="btn" onclick="openLesson('${i.folder}',${n})">Open</button><button class="check ${completed[i.folder]?'done':''}" onclick="toggle('${i.folder}')">${completed[i.folder]?'✓':'○'}</button></div></div>`;
+ root.innerHTML=`${nav('phases',true)}<main class="main"><div class="phaseHead"><h1>Phase ${n}</h1><div class="phaseDesc">${esc(SETTINGS.phaseDescriptions[String(n)]??p.description)}</div></div><div class="contentTabs"><button class="contentTab ${phaseSection==='learn'?'active':''}" onclick="showPhase(${n},'learn')">Learning (${learns.length})</button><button class="contentTab ${phaseSection==='exercise'?'active':''}" onclick="showPhase(${n},'exercise')">Exercises (${ex.length})</button></div><div class="lessonList">${items.map(render).join('')||'<div class="meta">No items in this section.</div>'}</div></main>`;
 }
+
 function toggle(id){completed[id]=!completed[id];save();showPhase(phase)}
 
 function resources(){
