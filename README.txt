@@ -1,10 +1,16 @@
-STIFF — V7 + V9 MIX
+STIFF — V11 — V7 LIGHT + STACKED COURSE SECTIONS
 
-This build intentionally combines:
-- V7 Light visual design, cream background, charcoal text and mint/teal accent.
-- V7 top navigation and circular Phase 1–9 content bar.
-- V7 Resources/Admin structure and original mapped course data.
-- V9 behaviour that separates Learning and Exercises into tabs inside every phase.
-- A single Phase heading inside each phase (no duplicated small Phase label).
+Base:
+- V7 Light cream/off-white interface
+- Charcoal typography and mint/teal accent
+- V7 top navigation and circular Phase 1–9 bar
+- Existing mapped course data and Resources/Admin structure
 
-Upload index.html, course-data.json and README.txt to the ROOT of the STIFF GitHub repository.
+Phase layout:
+- Learning and exercises are separated on the SAME phase page.
+- Learn appears first with its own heading and white lesson cards.
+- Exercises appears underneath with its own heading and white exercise cards.
+- Each card has a mint icon, Start button and Mark complete button.
+- No Learning/Exercises tabs are used.
+
+Upload the files in this ZIP to the ROOT of the STIFF GitHub repository.
