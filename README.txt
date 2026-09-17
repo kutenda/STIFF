@@ -1,16 +1,22 @@
-STIFF — V11 — V7 LIGHT + STACKED COURSE SECTIONS
+STIFF PRIVATE COURSE APP — V7 LIGHT / POSITIVE THEME
 
-Base:
-- V7 Light cream/off-white interface
-- Charcoal typography and mint/teal accent
-- V7 top navigation and circular Phase 1–9 bar
-- Existing mapped course data and Resources/Admin structure
+Design update:
+- STIFF branding is displayed in uppercase.
+- Main interface uses a warm off-white background.
+- Charcoal typography replaces harsh pure black.
+- Mint/teal is retained as the primary positive accent.
+- Exercises use pale mint cards.
+- Meditations/guided audio use soft sky-blue cards.
+- Therapy session resources use light lavender cards.
+- Courses use warm peach cards.
+- Lesson/screenshot viewer intentionally stays dark for the original course content.
 
-Phase layout:
-- Learning and exercises are separated on the SAME phase page.
-- Learn appears first with its own heading and white lesson cards.
-- Exercises appears underneath with its own heading and white exercise cards.
-- Each card has a mint icon, Start button and Mark complete button.
-- No Learning/Exercises tabs are used.
+Admin functionality from V6 is retained:
+- Edit brand/name
+- Edit home text
+- Edit phase descriptions
+- Rename, move and hide Resources
+- Reset progress
+- Export/import Admin settings
 
-Upload the files in this ZIP to the ROOT of the STIFF GitHub repository.
+The original Google Drive files remain unchanged.
