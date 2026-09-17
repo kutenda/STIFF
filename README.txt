@@ -1,9 +1,22 @@
-STIFF — GitHub Pages web app V9
+STIFF PRIVATE COURSE APP — V7 LIGHT / POSITIVE THEME
 
-Update: Every phase now has two completely separate views:
-- Learning
-- Exercises
+Design update:
+- STIFF branding is displayed in uppercase.
+- Main interface uses a warm off-white background.
+- Charcoal typography replaces harsh pure black.
+- Mint/teal is retained as the primary positive accent.
+- Exercises use pale mint cards.
+- Meditations/guided audio use soft sky-blue cards.
+- Therapy session resources use light lavender cards.
+- Courses use warm peach cards.
+- Lesson/screenshot viewer intentionally stays dark for the original course content.
 
-Opening a phase shows Learning only by default. Exercises are only shown after selecting the Exercises tab. Counts are displayed on each tab and the original lesson order is preserved within each section.
+Admin functionality from V6 is retained:
+- Edit brand/name
+- Edit home text
+- Edit phase descriptions
+- Rename, move and hide Resources
+- Reset progress
+- Export/import Admin settings
 
-Upload all files in this folder to the ROOT of the GitHub repository and replace the existing files.
+The original Google Drive files remain unchanged.
