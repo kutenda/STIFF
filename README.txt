@@ -1,14 +1,9 @@
-STIFF — GitHub Pages web app
+STIFF — GitHub Pages web app V9
 
-Upload ALL files in this folder to the ROOT of your GitHub repository:
-- index.html
-- course-data.json
-- manifest.webmanifest
-- icon.svg
-- sw.js
+Update: Every phase now has two completely separate views:
+- Learning
+- Exercises
 
-GitHub: Settings > Pages > Deploy from a branch > main > /(root).
+Opening a phase shows Learning only by default. Exercises are only shown after selecting the Exercises tab. Counts are displayed on each tab and the original lesson order is preserved within each section.
 
-The app is designed for iPhone/Android and desktop, supports Add to Home Screen, remembers completion locally, and uses your existing Google Drive IDs for saved lesson media. You must be signed into the Google account that can access those Drive files.
-
-The screenshot viewer deliberately clips the lower navigation area of saved screenshots so STIFF's own Back/Next buttons are used.
+Upload all files in this folder to the ROOT of the GitHub repository and replace the existing files.
